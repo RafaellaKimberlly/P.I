@@ -1,0 +1,27 @@
+.pag-cadastro{
+    background-color: #ecf0f1;
+    padding: 50px 0;
+    height: 700px;
+}
+
+.caixa-cadastro{
+    padding-left: 120px;
+    height: 723px;
+    width: 1180px;
+
+
+}
+.inp_pad{
+    height: 20px;
+    width: 410px;
+
+}
+
+.form{
+    float: left;
+}
+
+.img_dash{
+    margin-left: 130px;
+
+}

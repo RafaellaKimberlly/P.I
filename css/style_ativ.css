@@ -10,6 +10,7 @@ border: 0;
     background-color: black;
     height: 80px;
     margin: auto;
+    border-bottom: 5px solid orangered;
 }
 
 .cabecalho nav {
@@ -45,6 +46,14 @@ font-size: larger;
     color:rgb(245, 100, 16)
 }
 
+.header{
+    width: 100%;
+    height: 80px;
+
+}
+
+
+
  .but{
     color: orange;
 }
@@ -52,7 +61,7 @@ font-size: larger;
 .imagem_meio{
     width: 100%;
     height: 500px;
-    background: url("team.png");
+    background: url("../img/team.png");
     background-repeat: no-repeat;
     min-height: 400px;
     color: white;
