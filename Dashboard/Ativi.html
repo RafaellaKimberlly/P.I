@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Dashboard/ativi.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.0.2/chart.min.js" 
+        integrity="sha512-dnUg2JxjlVoXHVdSMWDYm2Y5xcIrJg1N+juOuRi0yLVkku/g26rwHwysJDAMwahaDfRpr1AxFz43ktuMPr/l1A==" 
+        crossorigin="anonymous">
+        </script>
+
+        <title>Dash</title>
+    </script>
+</head>
+<div class="cabecalho">
+    <div class="caixa">
+        <h1><span class="casa">RK.corporation</span></h1>
+        <nav>
+            <ul>
+                <li>Home</li>
+                <li>Sobre</li>
+                <li>Contato</li>
+                <li >Login</li>
+                <li >Dashboard</li>
+            </ul>
+        </nav>
+    </div>
+</div>
+<body>
+    <center>
+    <div class="container">
+        <div class="caixas_de_cima">
+    <div class="box_1">
+        <h4 class="text">Tendo</h4> <p class="frase">base os dados pesquisados, 
+        a segurança pública tem um déficit gigantesco 
+        por falta de monitoramento e eficácia.</p> 
+
+    </div>
+    <div class="box_2">
+        <h4 class="text">O Projeto</h4> <p class="frase">tem como função utilizar as informações captadas por sensores de luminosidade, 
+        implementados em veículos de serviços que têm o trajeto definido e uma baixa velocidade de tráfego.</p>
+
+    </div>
+    <div class="box_3">
+        <h4 class="text">Enquanto</h4> <p class="frase"> criminologia clássica se preocupa com o crime depois que ele ocorreu, 
+        intervenções nos ambientes onde crimes ocorrem são de caráter preventivo e envolvem alguns mandamentos da 
+        infraestrutura urbana para evitar que crimes aconteçam.</p>
+    </div>
+</div>
+    <div class="grafico1">
+    <div style="width: 800px; height: 300px;">
+    <canvas width="800px" height="300px" id="chart"></canvas>
+    </div>
+</div>
+    <div class="grafico2">
+    <div style="width: 800px; height: 300px; margin-top: 180px;">
+    <canvas width="800px" height="300px" id="chart1"></canvas>
+</div>
+    </div>
+
+</center>
+
+
+</body>
+</html>
+<canvas id="myChart" width="200" height="200"></canvas>
+<canvas id="mixedChart" width="200" height="200"></canvas>
+<script>
+var ctx = chart.getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['1', '2', '3', '4', '5', '6','7','8','9','10'],
+        datasets: [{
+            label: 'Luminosidade',
+            data: [400, 500, 487, 317, 1021, 987,1002,875,798,655],
+            backgroundColor: [
+                'yellow',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'white',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+
+ 
+var ctx1 = chart1.getContext('2d');
+
+var mixedChart = new Chart(ctx1, {
+    type: 'bar',
+    data: {
+        datasets: [{
+        type: 'bar',
+            label: 'Luminosidade',
+            data: [400, 500, 487, 327, 1021, 987,1002,875,798,655],
+            backgroundColor: [
+                'yellow',
+            ],
+        }, {
+            label: 'Taxa de Criminalidade em %',
+            data: [650, 500, 600, 700, 150, 230,300,230,390,450],
+            backgroundColor: [
+                'orange',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'white',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }],
+        labels: ['1', '2', '3', '4', '5', '6','7','8','9','10']
+    },
+});
+const config = {
+  type: 'scatter',
+  data: 'data',
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  }
+};
+var mixedChart = new Chart(ctx1, {
+   type: 'bar',
+   data: {
+       datasets: [{
+            label: 'Luminosidade',
+            data: [400, 500, 487, 317, 1021, 987,1002,875,798,655],
+           type: 'bar',
+           // this dataset is drawn on top
+           order: 2
+       }, {
+        label: 'Taxa de Criminalidade em %',
+        data: [650, 500, 600, 700, 150, 230,300,230,390,450],
+           // this dataset is drawn below
+           order: 1
+       }],
+       labels: ['1', '2', '3', '4', '5', '6','7','8','9','10']
+   },
+   options: options
+});
+</script>
+
+<div class="rodape">
+    <h5>Feito com carinho por um aluno BandTec. Copyright © 2021</h5>
+</div>

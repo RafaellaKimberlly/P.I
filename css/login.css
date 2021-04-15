@@ -20,6 +20,9 @@
     width: 50%;
     display: inline-block;
     size: 100px;
+    border: 1px solid #cccdce;
+    border-radius: 5px;
+    height: 25px;
 }
 
 .btn-green{

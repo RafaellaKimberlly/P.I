@@ -14,7 +14,9 @@
 .inp_pad{
     height: 20px;
     width: 410px;
-
+    border: 1px solid #cccdce;
+    border-radius: 5px;
+    height: 25px;
 }
 
 .form{
@@ -23,5 +25,4 @@
 
 .img_dash{
     margin-left: 130px;
-
 }
